@@ -100,15 +100,15 @@ class App extends Component {
   signupHandler = (event, authData) => {
     event.preventDefault();
     this.setState({ authLoading: true });
-    fetch('http://localhost:8080/auth/signup', {
-      method: 'PUT',
+    fetch('http://localhost:3006/auth/signup', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email: authData.email,
-        password: authData.password,
-        name: authData.name,
+        email: authData.signupForm.email.value,
+        password: authData.signupForm.password.value,
+        name: authData.signupForm.name.value,
       }) 
     })
       .then(res => {
