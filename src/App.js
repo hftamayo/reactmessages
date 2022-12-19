@@ -118,7 +118,7 @@ class App extends Component {
           );
         }
         if (res.status !== 200 && res.status !== 201) {
-          console.log('Error!');
+          console.log('Error cod number:' + res.status);
           throw new Error('Creating a user failed!');
         }
         return res.json();
